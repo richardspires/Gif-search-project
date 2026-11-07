@@ -32,7 +32,7 @@ form.addEventListener("submit", function (event) {
        isValid = false;
     }
 
-    if (isVaild) {
+    if (isValid) {
         formMsg.className = "ok";
         formMsg.textContent = "Message sent. Thank you, " + name + "!";
         form.reset();
