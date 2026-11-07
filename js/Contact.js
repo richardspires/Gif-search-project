@@ -31,4 +31,13 @@ form.addEventListener("submit", function (event) {
        document.getElementById("messageErr").textContent = "Please write your message.";
        isVaild = false;
     }
+
+    if (isVaild) {
+        formMsg.className = "ok";
+        formMsg.textContent = "Message sent. Thank you, " + name + "!";
+        form.reset();
+    } else {
+        formMsg.className = "bad";
+        formMsg.textContent = "Please fix the error"
+    }
 });

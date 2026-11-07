@@ -60,7 +60,7 @@ async function getGifs(url) {
 } 
 
 function getTrending() {
-    const url = baseUrl + "/tending?api_key=" + apiKey + "&limit=24rating=g";
+    const url = baseUrl + "/trending?api_key=" + apiKey + "&limit=24rating=g";
     getGifs(url);
 }
 
