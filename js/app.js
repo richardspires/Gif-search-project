@@ -102,4 +102,25 @@ function openModal(gif) {
     modal.hidden = false;
 }
 
-fu
+function closeModal() {
+    modal.hidden = true;
+}
+
+async function copyUrl() {
+    try{
+    await navigator.clipboard.writeText(selectedGif.images.original.url);
+    document.getElementById("copyMsg").textContent = "GIF URL copied";
+     } catch (error) {
+    document.getElementById("copyMsg").textContent = "Could not copy the URL.";
+     }
+}
+
+if (modal) {
+   document.getElementById("closeModal").addEventListener("click", closeModal);
+    document.getElementById("copyBtn").addEventListener("click", copyUrl);
+}
+
+// home page search
+const searchInput = document.getElementById("searchInput")
+const searchBtn = document.getElementById("searchBtn")
+
