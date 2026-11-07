@@ -1,5 +1,5 @@
 const apiKey = "xuUJqPTzqEPpZA6yA0fVjhp26k2Ba1zY"
-const baseUr1 = "https://api.giphy.com/v1/gifs"
+const baseUrl = "https://api.giphy.com/v1/gifs"
 
 // = page elements
 const grid = document.getElementById("gifGrid")
@@ -29,14 +29,14 @@ function showMessage(text, isError) {
 }
 
 async function getGifs(url) {
-    showMessage("Loading Gifs..", false);
+    showMessage("Loading GIFs..", false);
     grid.innerHTML = "";
     
     try {
         const response = await fetch(url);
 
         if (!response.ok) {
-            showMessage("GIPHY error " + response.status + ". Check yout AIP key.", true);
+            showMessage("GIPHY error " + response.status + ". Check your AIP key.", true);
             return;
         }
     
@@ -124,3 +124,26 @@ if (modal) {
 const searchInput = document.getElementById("searchInput")
 const searchBtn = document.getElementById("searchBtn")
 
+function doSearch() {
+    const keyword = searchInput.ariaValueMax.trim();
+
+    if (keyword === "") {
+        showMessage("Please type something to satisfy your wonder.", true);
+        return;
+    }
+
+    document.getElementById("sectionTitle").textContent = "Results for " + keyword;
+    searchGifs(keyword);
+}
+
+if (searchInput) {
+    searchBtn.addEventListener("click", doSearch);
+
+    searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            doSearch();
+        }
+    });
+
+    getTrending();
+}
