@@ -60,7 +60,7 @@ async function getGifs(url) {
 } 
 
 function getTrending() {
-    const url = baseUrl + "/trending?api_key=" + apiKey + "&limit=24rating=g";
+    const url = baseUrl + "/trending?api_key=" + apiKey + "&limit=24&rating=g";
     getGifs(url);
 }
 
@@ -94,10 +94,10 @@ function showGifs() {
 
 // Modal
 function openModal(gif) {
-    searchGifs = gif;
+    selectedGif = gif;
     document.getElementById("modalImg").src = gif.images.original.url;
-    document.getElementById("moadlTitle").textContent = gif.title;
-    document.getElementById("giphyLink").herf = gif.url;
+    document.getElementById("modalTitle").textContent = gif.title;
+    document.getElementById("giphyLink").href = gif.url;
     document.getElementById("copyMsg").textContent = "";
     modal.hidden = false;
 }
@@ -125,7 +125,7 @@ const searchInput = document.getElementById("searchInput")
 const searchBtn = document.getElementById("searchBtn")
 
 function doSearch() {
-    const keyword = searchInput.ariaValueMax.trim();
+    const keyword = searchInput.value.trim();
 
     if (keyword === "") {
         showMessage("Please type something to satisfy your wonder.", true);

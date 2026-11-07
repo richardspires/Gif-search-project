@@ -12,24 +12,24 @@ form.addEventListener("submit", function (event) {
     document.getElementById("emailErr").textContent = "";
     document.getElementById("messageErr").textContent = "";
     
-    let isVaild = true;
+    let isValid = true;
 
     if (name === "") {
        document.getElementById("nameErr").textContent = "Please enter your name.";
-       isVaild = false;
+       isValid = false;
     }
 
     if (email === "") {
        document.getElementById("emailErr").textContent = "Please enter your email.";
-       isVaild = false;
+       isValid = false;
     } else if  (!email.includes("@") || !email.includes(".")) {
         document.getElementById("emailErr").textContent = "Please enter your valid email.";
-        isVaild = false;
+        isValid = false;
     }
 
     if (message === "") {
        document.getElementById("messageErr").textContent = "Please write your message.";
-       isVaild = false;
+       isValid = false;
     }
 
     if (isVaild) {
