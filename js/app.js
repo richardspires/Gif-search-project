@@ -1,5 +1,5 @@
 const apiKey = "xuUJqPTzqEPpZA6yA0fVjhp26k2Ba1zY"
-const baseUrl = "https://api.giphy.com/v1/gifs"
+const baseUrl = "https://api.giphy.com/v1/gifs";
 
 // = page elements
 const grid = document.getElementById("gifGrid")
@@ -36,7 +36,7 @@ async function getGifs(url) {
         const response = await fetch(url);
 
         if (!response.ok) {
-            showMessage("GIPHY error " + response.status + ". Check your AIP key.", true);
+            showMessage("GIPHY error " + response.status + ". Check your API key.", true);
             return;
         }
     
