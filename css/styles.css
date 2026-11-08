@@ -80,6 +80,7 @@ h2{
     background: rgba(18, 14, 22, 0.9);
     position: sticky;
     top: 0;
+    z-index: 5;
     backdrop-filter: blur(6px);
 }
 
@@ -96,7 +97,7 @@ h2{
 
 .nav nav a:hover,
 .nav nav a.on {
-    border-color: var(--blood);
+    border-color: var(--blood-2);
     color: #fff;
 }
 
@@ -331,4 +332,57 @@ footer {
     border-top: 1px solid var(--line);
     color: var(--ash);
     font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        padding: 0 var(--space-md) 3rem;
+    }
+
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav nav{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: var(--space-xl);
+    }
+
+    .nav nav.open {
+        display: flex;
+    }
+
+    .hero {
+        padding: var(--space-xl);
+    }
+
+    .search button {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
 }
