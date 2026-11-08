@@ -1,4 +1,4 @@
-const apiKey = "xuUJqPTzqEPpZA6yA0fVjhp26k2Ba1zY";
+
 const baseUrl = "https://api.giphy.com/v1/gifs";
 
 // = page elements
