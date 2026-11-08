@@ -109,3 +109,117 @@ h2{
     padding-bottom: var(--space-xs) var(--space-sm);
     cursor: pointer;
 }
+
+.hero {
+    text-align: center;
+    padding: 5rem 0 var(--space-md);
+}
+
+.hero p {
+    color: var(--ash);
+    max-width: 34rem;
+    margin: var(--space-md) auto var(--space-lg);
+    font-size: 1.3rem;
+}
+
+.search {
+    display: flex;
+    max-width: 640px;
+    margin: 0 auto;
+    border: 1px solid var(--brass);
+    background: var(--panel);
+}
+
+input,
+textarea {
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    color: var(--bone);
+    font: inherit;
+    padding: var(--space-sm) var(--space-md);
+}
+
+.search input {
+    border: 0;
+}
+
+button,
+.actions a{
+    background: var(--blood);
+    color: #fff;
+    border: 0;
+    font: inherit;
+    font-weight: 600;
+    padding: var(--space-sm) var(--space-lg);
+    cursor: pointer;
+    transition: 0.2s;
+    display: inline-block;
+}
+
+button:hover,
+.actions a:hover {
+    background: var(--blood);
+    box-shadow: 0 0 18px rgba(196, 42, 69, 0.55);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 999px 999px 6px 6px / 70px 70px 6px 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    padding-bottom: var(--space-md);
+}
+
+.card:hover,
+.card:focus-visible {
+    border-color: var(--brass);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(155, 28, 49, 0.35);
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.8) contrast(1.05);
+}
+
+.card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: var(--space-sm) var(--space-md) 0;
+    color: var(--ash);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card button {
+    margin-top: var(--space-md);
+    padding: 0.3rem var(--space-md);
+    font-size: 0.95rem;
+}
+
+#status {
+    color: var(--brass);
+    font-style: italic;
+    min-height: 1.6rem;
+    margin-bottom: var(--space-md);
+}
+
+#status.error {
+    color: var(--blood-2);
+}
+
