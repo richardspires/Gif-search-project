@@ -1,12 +1,12 @@
-const apiKey = "xuUJqPTzqEPpZA6yA0fVjhp26k2Ba1zY"
+const apiKey = "xuUJqPTzqEPpZA6yA0fVjhp26k2Ba1zY";
 const baseUrl = "https://api.giphy.com/v1/gifs";
 
 // = page elements
-const grid = document.getElementById("gifGrid")
-const statusText = document.getElementById("status")
-const modal = document.getElementById("modal")
-const burger = document.getElementById("burger")
-const menu = document.getElementById("menu")
+const grid = document.getElementById("gifGrid");
+const statusText = document.getElementById("status");
+const modal = document.getElementById("modal");
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
 
 let allGifs = [];
 let selectedGif = null;
@@ -55,7 +55,7 @@ async function getGifs(url) {
      showMessage("", false);
      showGifs();
     } catch (error) {
-        showMessage("Something went Batty! check your Api key or internet.", true);
+        showMessage("Something went Batty! Check your Api key or internet.", true);
     }
 } 
 
@@ -65,7 +65,7 @@ function getTrending() {
 }
 
 function searchGifs(keyword) {
-    const url = baseUrl + "/search?api_key=" + apiKey + "&q=" + encodeURIComponent(keyword) + "&limit=24rating=g";
+    const url = baseUrl + "/search?api_key=" + apiKey + "&q=" + encodeURIComponent(keyword) + "&limit=24&rating=g";
     getGifs(url);
 }
 
@@ -107,7 +107,7 @@ function closeModal() {
 }
 
 async function copyUrl() {
-    try{
+    try {
     await navigator.clipboard.writeText(selectedGif.images.original.url);
     document.getElementById("copyMsg").textContent = "GIF URL copied";
      } catch (error) {
